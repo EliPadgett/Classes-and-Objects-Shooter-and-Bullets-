@@ -29,6 +29,7 @@ class Player(Turtle):
         self.shape("turtle")
         self.bullets = []
         self.alive = True
+        self.color = color
         self.st()
         screen.onkeypress(self.turn_left, left_key)
         screen.onkeypress(self.turn_right, right_key)
@@ -45,6 +46,17 @@ class Player(Turtle):
             self.setheading(180 - self.heading())
         if self.ycor() > 230 or self.ycor() < -230:
             self.setheading(-self.heading())
+    
+
+class Bullet(Turtle):
+    def __init__(self, player):
+        super().__init__()
+        self.ht()
+        self.speed(0)
+        self.color = color
+        self.pu()
+        
+
 
 screen = Screen()
 screen.bgcolor("black")
