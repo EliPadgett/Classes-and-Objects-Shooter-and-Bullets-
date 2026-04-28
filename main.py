@@ -106,6 +106,12 @@ while p1.alive and p2.alive:
             bullet.ht()
             p2.bullets.remove(bullet)
             p1.health -= 1
+        if player.health == 2:
+            player.color("yellow")
+        elif player.health == 1:
+            player.color("red")
+        elif player.health <=0:
+            player.ht()
     
 
 
